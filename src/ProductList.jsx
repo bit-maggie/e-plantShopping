@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
-import { addItem } from './CartSlice';
+import { addItem, removeItem, updateQuantity } from './CartSlice';
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
@@ -256,6 +256,7 @@ function ProductList({ onHomeClick }) {
     };
 
     const handleAddToCart = product => {
+        // product = plant js object
         dispact(addItem(product));
 
         setAddedToCart((prevState) => ({
