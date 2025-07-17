@@ -46,6 +46,7 @@ body {
     text-decoration: underline overline grey 2px;
     text-underline-offset: 10px;
     text-align: center;
+    margin-top: 50px;
 }
 
 /* Product Grid */
@@ -179,7 +180,7 @@ body {
     /* background-color: red; */
     margin-left: 27px;
     position: absolute;
-    font-size: 40px;
+    font-size: 50px;
 }
 .plantname_heading{
    display: flex;
