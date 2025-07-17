@@ -21,7 +21,7 @@ export const CartSlice = createSlice({
     removeItem: (state, action) => {
         state.items = state.items.filter(item => item.name !== action.payload);
     },
-    // 
+    // action.payload = the name and quantity of the plant to update
     updateQuantity: (state, action) => {
         const {name, quantity} = action.payload;
         const itemToUpdate = state.items.find(item => item.name === name);
