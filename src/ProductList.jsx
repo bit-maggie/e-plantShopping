@@ -10,6 +10,22 @@ function ProductList({ onHomeClick }) {
     const [addedToCart, setAddedToCart] = useState({});
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart.items);
+    
+    useEffect(() => {
+        const updatedState = {};
+        /*plantArray.forEach((category) => {
+            category.plants.forEach((plant) => {
+                updatedState[plant.name] = cart.some(
+                    (item) => item.name === plant.name
+                );
+            }); 
+        });*/
+        cart.forEach((item) => {
+            updatedState[item.name] = true;
+        });
+        setAddedToCart(updatedState);
+    }, [cart]);
+    
 
     const plantsArray = [
         {
@@ -304,7 +320,7 @@ function ProductList({ onHomeClick }) {
                                         <div className="product-cost">{plant.cost}</div> {/* Display plant cost */}
                                         <button className={addedToCart[plant.name]? "product-button.added-to-cart" : "product-button"}
                                                 disabled={addedToCart[plant.name]}
-                                                onClick={() => handleAddToCart(plant)}>{addedToCart? "Added to Cart" : "Add to Cart"}</button>
+                                                onClick={() => handleAddToCart(plant)}>{addedToCart[plant.name]? "Added to Cart" : "Add to Cart"}</button>
                                     </div>
                                 ))}
                             </div>
