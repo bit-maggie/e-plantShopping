@@ -39,6 +39,15 @@ body {
    
 }
 
+/* Attempting to style that categories
+   as shown in the video example. */
+.product-category{
+    padding: 10px;
+    text-decoration: underline overline grey 2px;
+    text-underline-offset: 10px;
+    text-align: center;
+}
+
 /* Product Grid */
 .product-grid {
     display:flex;
@@ -84,6 +93,7 @@ body {
 .product-title {
     font-weight: bold;
     margin-bottom: 10px;
+
 }
 
 .product-price {
@@ -170,8 +180,6 @@ body {
     margin-left: 27px;
     position: absolute;
     font-size: 40px;
-    
-
 }
 .plantname_heading{
    display: flex;
